@@ -30,6 +30,6 @@ def top_ten(subreddit):
             x = post["data"]["title"]
             posts.append(x)
 
-        return(posts)
+        print('OK')
     except:
         print(None)
