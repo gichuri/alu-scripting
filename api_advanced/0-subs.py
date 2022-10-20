@@ -8,7 +8,7 @@ def number_of_subscribers(subreddit):
     define the URL to fetch data from
     """
 
-    base_url = "https://www.reddit.com/r/{}.json".format(subreddit)
+    base_url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
 
     """
     initiate a response request using request.get
@@ -27,6 +27,7 @@ def number_of_subscribers(subreddit):
     """
 
     if response.status_code == 200:
-        return json_data.get("data").get("subscribers")
+        return json_data.get('data').get('subscribers')
     else:
         return 0
+
