@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+'''
+python script to fetch the titles of hottest 10 posts on a subreddit
+
+'''
+
+
 import requests
 import json
 
