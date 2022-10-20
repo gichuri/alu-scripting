@@ -27,10 +27,7 @@ def top_ten(subreddit):
         posts = []
 
         for post in response["data"]["children"]:
-            x = post["data"]["title"]
-            posts.append(x)
-        for element in posts:
-            print(element)
+            print(post.get('data', 'title'))
     except:
         print(None)
 
