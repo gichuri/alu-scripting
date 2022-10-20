@@ -12,21 +12,21 @@ def top_ten(subreddit):
     """
     define the url and the query
     """
-    url = "https://www.reddit.com/r/{}/hot.json?limit=8".format(subreddit)
+    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
 
     """
     make the request
     """
 
-    response = requests.get(url, headers={"user-agent": "youtbot"}).json()
+    response = requests.get(url, headers={"user-agent": "youtbot"})
 
     """
     sieve through the JSON using a for loop
     """
-    try:
-
+    if response.status_code == 200:
+        json_data = response.json
         posts = response.get("data").get("children")
         for post in posts:
-            print(post.get('data') .get('title'))
-    except:
+            print(post.get("data").get("title"))
+    else:
         print(None)
