@@ -12,7 +12,7 @@ def top_ten(subreddit):
     """
     define the url and the query
     """
-    url = "https://www.reddit.com/r/{}/hot.json?limit=10&t=all".format(subreddit)
+    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
 
     """
     make the request
@@ -30,6 +30,6 @@ def top_ten(subreddit):
             x = post["data"]["title"]
             posts.append(x)
 
-        print(posts)
+        return(posts)
     except:
         print(None)
