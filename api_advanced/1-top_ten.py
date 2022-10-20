@@ -24,10 +24,9 @@ def top_ten(subreddit):
     sieve through the JSON using a for loop
     """
     try:
-        posts = []
 
-        for post in response["data"]["children"]:
-            print(post.get('data', 'title'))
+        posts = response.get("data").get("children")
+        for post in posts:
+            print(post.get("data", "title"))
     except:
         print(None)
-
